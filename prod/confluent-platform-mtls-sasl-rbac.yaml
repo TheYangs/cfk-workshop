@@ -1,8 +1,15 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: confluent-platform
+  labels:
+    name: confluent-platform
+---
 apiVersion: platform.confluent.io/v1beta1
 kind: Zookeeper
 metadata:
   name: zookeeper
-  namespace: confluent
+  namespace: confluent-platform
 spec:
   replicas: 3
   image:
@@ -21,7 +28,7 @@ apiVersion: platform.confluent.io/v1beta1
 kind: Kafka
 metadata:
   name: kafka
-  namespace: confluent
+  namespace: confluent-platform
 spec:
   replicas: 3
   image:
@@ -98,7 +105,7 @@ apiVersion: platform.confluent.io/v1beta1
 kind: Connect
 metadata:
   name: connect
-  namespace: confluent
+  namespace: confluent-platform
 spec:
   replicas: 2
   image:
@@ -135,7 +142,7 @@ apiVersion: platform.confluent.io/v1beta1
 kind: SchemaRegistry
 metadata:
   name: schemaregistry
-  namespace: confluent
+  namespace: confluent-platform
 spec:
   replicas: 1
   image:
@@ -172,7 +179,7 @@ apiVersion: platform.confluent.io/v1beta1
 kind: KsqlDB
 metadata:
   name: ksqldb
-  namespace: confluent
+  namespace: confluent-platform
 spec:
   replicas: 2
   image:
@@ -210,7 +217,7 @@ apiVersion: platform.confluent.io/v1beta1
 kind: ControlCenter
 metadata:
   name: controlcenter
-  namespace: confluent
+  namespace: confluent-platform
 spec:
   replicas: 1
   podTemplate:
@@ -272,7 +279,7 @@ apiVersion: platform.confluent.io/v1beta1
 kind: KafkaRestClass
 metadata:
   name: default
-  namespace: confluent
+  namespace: confluent-platform
 spec:
   kafkaRest:
     authentication:

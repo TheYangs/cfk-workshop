@@ -3,7 +3,7 @@ apiVersion: platform.confluent.io/v1beta1
 kind: KafkaTopic
 metadata:
   name: prod-quotes
-  namespace: confluent
+  namespace: confluent-platform
 spec:
   replicas: 1
   partitionCount: 2
@@ -11,7 +11,7 @@ spec:
     cleanup.policy: "delete"
   kafkaRestClassRef:
     name: default
-    namespace: confluent
+    namespace: confluent-platform
 ---
 apiVersion: apps/v1
 kind: StatefulSet

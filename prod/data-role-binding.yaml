@@ -2,7 +2,7 @@ apiVersion: platform.confluent.io/v1beta1
 kind: ConfluentRolebinding
 metadata:
   name: datagen-topic-consumergroup
-  namespace: confluent
+  namespace: confluent-platform
 spec:
   principal:
     name: devuser
@@ -23,7 +23,7 @@ apiVersion: platform.confluent.io/v1beta1
 kind: ConfluentRolebinding
 metadata:
   name: datagen-consumergroup
-  namespace: confluent
+  namespace: confluent-platform
 spec:
   principal:
     name: devuser
